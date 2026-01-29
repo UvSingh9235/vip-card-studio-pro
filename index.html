@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Card Studio Pro 👑</title>
+    <style>
+        :root { --gold: #f1c40f; }
+        body { margin: 0; background: #0a0a0a; color: white; font-family: 'Poppins', sans-serif; text-align: center; padding-bottom: 50px; }
+        .controls { background: #1a1a1a; padding: 20px; border-radius: 0 0 30px 30px; border-bottom: 2px solid var(--gold); }
+        
+        /* Input Styling */
+        input, select { width: 90%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #333; background: #000; color: #fff; }
+        
+        /* The Canvas Card */
+        #cardCanvas { 
+            width: 350px; height: 500px; margin: 30px auto; position: relative;
+            background: #222; border: 5px solid var(--gold); border-radius: 15px;
+            overflow: hidden; box-shadow: 0 0 30px rgba(0,0,0,1);
+            background-size: cover; background-position: center;
+        }
+
+        /* Elements inside Card */
+        #userPhoto { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--gold); margin-top: 40px; object-fit: cover; display: none; }
+        .editable { cursor: pointer; padding: 5px; transition: 0.3s; display: block; width: 90%; margin: 10px auto; }
+        .editable:hover { background: rgba(255,255,255,0.1); border: 1px dashed var(--gold); }
+        
+        #cardTitle { font-size: 24px; font-weight: bold; margin-top: 20px; color: var(--gold); }
+        #cardMsg { font-size: 16px; margin: 10px; line-height: 1.4; }
+        #cardName { font-size: 30px; font-weight: 900; color: #fff; text-transform: uppercase; }
+
+        .btn-main { background: var(--gold); color: #000; padding: 15px 30px; border-radius: 50px; border: none; font-weight: bold; font-size: 18px; margin-top: 20px; cursor: pointer; }
+        .hint { font-size: 12px; color: #888; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="controls">
+    <h2>VIP DESIGNER PRO 👑</h2>
+    
+    <p style="font-size: 14px; color: var(--gold);">1. Category Chunein:</p>
+    <select id="catSelect" onchange="changeTemplate()">
+        <option value="bday">Birthday Special</option>
+        <option value="wed">Wedding Invite</option>
+        <option value="anniv">Anniversary Wish</option>
+    </select>
+
+    <p style="font-size: 14px; color: var(--gold);">2. Apni Photo Lagayein:</p>
+    <input type="file" id="photoInp" accept="image/*" onchange="previewPhoto(event)">
+</div>
+
+<div style="margin: 20px 0;">
+    <script async="async" data-cfasync="false" src="https://pl28594492.effectivegatecpm.com/88348fc0a52369bd5d62ecf6903a1c8b/invoke.js"></script>
+    <div id="container-88348fc0a52369bd5d62ecf6903a1c8b"></div>
+</div>
+
+<p class="hint">Niche card par click karke text badlein 👇</p>
+
+<div id="cardCanvas" style="background-image: url('https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400');">
+    <img id="userPhoto" src="" alt="Profile">
+    
+    <div id="cardTitle" class="editable" contenteditable="true">HAPPY BIRTHDAY</div>
+    <div id="cardMsg" class="editable" contenteditable="true">Bhagwan kare aapka har sapna poora ho. Aap hamesha khush rahein!</div>
+    <div id="cardName" class="editable" contenteditable="true">APNA NAAM</div>
+    
+    <div style="position: absolute; bottom: 20px; width: 100%; font-size: 10px; opacity: 0.5;">
+        Designed by VIP Studio Pro
+    </div>
+</div>
+
+<button class="btn-main" onclick="downloadAction()">DOWNLOAD & SHARE ✅</button>
+
+<script>
+    // 1. Photo Preview Function
+    function previewPhoto(event) {
+        let reader = new FileReader();
+        reader.onload = function(){
+            let output = document.getElementById('userPhoto');
+            output.src = reader.result;
+            output.style.display = "inline-block";
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+
+    // 2. Change Template Backgrounds
+    function changeTemplate() {
+        let cat = document.getElementById('catSelect').value;
+        let canvas = document.getElementById('cardCanvas');
+        let title = document.getElementById('cardTitle');
+        let msg = document.getElementById('cardMsg');
+
+        if(cat == 'bday') {
+            canvas.style.backgroundImage = "url('https://images.unsplash.com/photo-1513151233558-d860c5398176?w=400')";
+            title.innerText = "HAPPY BIRTHDAY";
+            msg.innerText = "Bhagwan kare aapka har sapna poora ho. Aap hamesha khush rahein!";
+        } else if(cat == 'wed') {
+            canvas.style.backgroundImage = "url('https://images.unsplash.com/photo-1519741497674-611481863552?w=400')";
+            title.innerText = "WEDDING INVITATION";
+            msg.innerText = "Hamari khushiyon mein shamil hone ke liye aapka swagat hai!";
+        } else {
+            canvas.style.backgroundImage = "url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=400')";
+            title.innerText = "HAPPY ANNIVERSARY";
+            msg.innerText = "Aap dono ki jodi hamesha salamat rahe!";
+        }
+    }
+
+    // 3. Download Action with Ad
+    function downloadAction() {
+        window.open('https://www.effectivegatecpm.com/gd2yx5sr6?key=e8ae7415fcf1ab1a5c01502659fb6fa5', '_blank');
+        alert("Aapka VIP Card taiyar hai! Ab iska SCREENSHOT lekar share karein. ✅");
+    }
+</script>
+
+</body>
+</html>
